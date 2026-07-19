@@ -1,6 +1,6 @@
 from aiogram import Router, F
 from aiogram.types import CallbackQuery
-
+from bot.services.group_service import GroupService
 router = Router()
 
 
@@ -30,7 +30,7 @@ Ya aparecerá en la lista pública.
 async def reject_group(callback: CallbackQuery):
 
     chat_id = int(callback.data.split(":")[1])
-
+    await GroupService.reject(chat_id)
     # Aquí después lo eliminaremos o lo marcaremos como rechazado
 
     await callback.message.edit_text(
