@@ -2,10 +2,9 @@ from aiogram import Router
 from aiogram.filters import ChatMemberUpdatedFilter
 from aiogram.enums import ChatMemberStatus
 from aiogram.types import ChatMemberUpdated
-
 from bot.config.config import settings
 from bot.keyboards.admin import pending_group_keyboard
-
+from bot.services.group_service import GroupService
 router = Router()
 
 
@@ -22,6 +21,13 @@ async def group_update(event: ChatMemberUpdated):
 
         chat = event.chat
 
+await GroupService.add_group(
+    chat.id,
+    chat.title,
+    chat.username,
+    None
+)
+        
         await event.bot.send_message(
             settings.OWNER_ID,
             f"""
