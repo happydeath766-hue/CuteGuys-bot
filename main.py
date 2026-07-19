@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import asyncio
 import logging
 import os
+from bot.handlers.admin_callbacks import router as admin_callbacks_router
 
 load_dotenv()
 
@@ -45,6 +46,7 @@ from bot.handlers.group_events import router as group_router
 dp.include_router(start_router)
 dp.include_router(admin_router)
 dp.include_router(group_router)
+dp.include_router(admin_callbacks_router)
 
 if __name__ == "__main__":
     asyncio.run(main())
