@@ -47,6 +47,7 @@ dp.include_router(start_router)
 dp.include_router(admin_router)
 dp.include_router(group_router)
 dp.include_router(admin_callbacks_router)
+dp.include_router(list_router)
 
 if __name__ == "__main__":
     asyncio.run(main())
