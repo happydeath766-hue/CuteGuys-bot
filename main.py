@@ -3,11 +3,11 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.types import BotCommand
 from dotenv import load_dotenv
+from bot.handlers.admin_callbacks import router as admin_callbacks_router
+from bot.handlers.list import router as list_router
 import asyncio
 import logging
 import os
-from bot.handlers.admin_callbacks import router as admin_callbacks_router
-from bot.handlers.list import router as list_router
 load_dotenv()
 
 TOKEN = os.getenv("BOT_TOKEN")
