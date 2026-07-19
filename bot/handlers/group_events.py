@@ -21,13 +21,13 @@ async def group_update(event: ChatMemberUpdated):
 
         chat = event.chat
 
-await GroupService.add_group(
-    chat.id,
-    chat.title,
-    chat.username,
-    None
-)
-        
+        await GroupService.add_group(
+            chat.id,
+            chat.title,
+            chat.username,
+            None
+        )
+
         await event.bot.send_message(
             settings.OWNER_ID,
             f"""
