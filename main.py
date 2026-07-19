@@ -24,8 +24,9 @@ dp = Dispatcher()
 
 async def set_commands():
     commands = [
-        BotCommand(command="start", description="Iniciar bot"),
-        BotCommand(command="admin", description="Panel de administración"),
+    BotCommand(command="start", description="Iniciar"),
+    BotCommand(command="lista", description="Lista de grupos"),
+    BotCommand(command="admin", description="Panel de administración"),
     ]
     await bot.set_my_commands(commands)
 
